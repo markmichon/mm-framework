@@ -1,0 +1,11 @@
+/* $Logo
+**************************************************************************/
+.logo {float:left;}
+.logo h1 {
+  display: block;
+  margin: 20px 0;
+  @include logo(20px, 0, -20px);
+  @include ir;
+  position:relative;
+  z-index:2;
+}

@@ -1,0 +1,45 @@
+
+//Units
+$start-width: 90%; //wrapper width
+$base-font-size: 16px;
+$base-line-height: 24px;
+$em: $base-font-size / 1em;
+
+$base-spacing-unit: $base-line-height!default;
+$half-spacing-unit: $base-spacing-unit / 2!default;
+$line-height-ratio: $base-line-height / $base-font-size;
+
+//Font Stacks
+// $base-font: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$base-font: "ff-tisa-web-pro", Georgia, Times, "Times New Roman", serif;
+$heading-font: "futura-pt", "Futura", Verdana, sans-serif;
+$short-copy-font: $heading-font;
+$br: 2px;
+
+//Colors
+// $background: #f6f3ef;
+$background: #f9f8f5;
+$alt-background: #f0eae3;
+$dark-grey: #373c3c;
+// $dark-green: #6ba690;
+$dark-green: #099872; //pantone
+$light-green: lighten($dark-green, 2%);
+$light-grey: lighten(#333, 30%);
+$test: lighten($dark-grey,30%);
+$copy: #373c3c;
+// $copy: #353C3A;
+$tan: #d0cbc4;
+
+$rgba-test: rgba(#373c3c, .5);
+//Reset
+
+//Font Sizes
+$mega: 123px;
+$h1-size: 76px;
+$h2-size: 47px;
+$h3-size: 29px;
+$body: 18px;
+$small: 11px;
+$tiny: 6px;
+$bigger: 42px;
+

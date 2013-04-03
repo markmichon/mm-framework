@@ -1,0 +1,464 @@
+/* $Page Styles
+**************************************************************************/
+
+body {
+  width:100%;
+  margin:0;
+  padding:0;
+  @include media-query(700px) {
+  padding-top:60px;
+  }
+
+}
+
+.main {
+  padding-top:$base-spacing-unit;
+  @extend .wrap;
+  @include clearfix;
+  margin-bottom:$base-spacing-unit;
+    h2 {
+      border-bottom: 4px solid $alt-background;
+    text-align: center;
+    @include font-size($body);
+    margin-bottom:$half-spacing-unit;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: $dark-grey;
+
+    @include media-query(700px) {
+      @include font-size(24px);
+      text-align: left;
+    }
+  }
+}
+
+.page-head {
+  background-color: $dark-green;
+  text-align: center;
+  padding:40px 0;
+  // height:500px;
+    @include media-query(700px) {
+    padding: 150px 0;
+  }
+    span { color:$dark-green;}
+  }
+
+.page-head-center {
+  text-align: center;
+}
+
+.page-head-center p {
+  margin-right:auto;
+  margin-left:auto;
+  max-width:640px;
+  letter-spacing: .1em;
+  color: $tan;
+  margin-bottom: 0;
+  @include font-size(16px);
+  @include media-query(600px) {@include font-size($body);}
+}
+
+.page-title {
+  // font-size:$h1-size;
+  width:100%;
+  line-height: 1.2;
+  // text-transform: uppercase;
+  color: $background;
+  // margin-bottom:$half-spacing-unit;
+  @include media-query(500px) {
+      font-size:$bigger;
+    }
+    @include media-query(700px) {
+      font-size:$h1-size;
+    }
+}
+.page-head-dark {
+  background-color: $dark-grey;
+  .page-title {color:$background;}
+  // p {color:$alt-background;}
+}
+
+// .page-head-inner {
+//   // @extend .wrap;
+//   display: inline-block;
+//   display: inline-block;
+//   vertical-align: middle;
+// }
+/* $Home-Specific
+**************************************************************************/
+
+.main-articles {
+  margin-bottom: $base-spacing-unit;
+  @include transition(opacity, 1s, ease-in-out);
+  @include media-query(700px) {
+    float:left;
+    width: 62%;
+    padding-right:$base-spacing-unit;
+  }
+  ul {
+    list-style-type: none;
+    margin-bottom:0;
+  }
+  ul, li {
+    @include transition(opacity, .5s);
+  }
+}
+
+.main-articles-item {
+  // border-radius: 4px;
+  &:first-child {margin-top:-$half-spacing-unit;}
+  &:last-child {margin-bottom:$half-spacing-unit;}
+  // border-top:1px solid #ccc;
+  p {
+    margin:0;
+    color: $copy;
+  }
+
+  h3 {
+    @include font-size(24px);
+    @include media-query(700px) {
+      @include font-size(29px);
+    }
+  }
+}
+
+.main-articles-item a {
+  padding:$half-spacing-unit 0;
+  // @include media-query(700px) {padding:60px 0;}
+  display: block;
+  // color: $copy;
+  &:hover, &:active {
+    // color: $background;
+    // background-color: $dark-green;
+  }
+}
+//   .main-articles-item {
+//     margin-bottom: $half-spacing-unit;
+
+//   a {
+//     font-family: $base-font;
+//     display: block;
+//     // color: $background;
+//     // background-color: $dark-grey;
+
+//     @include media-query(700px) {display: inline-block;}
+//     @include media-query(1000px) {@include font-size(24px);}
+//     // @include media-query(1088px) {
+//     //   // @include font-size(24px);
+//     //           // @include font-size($h3-size);
+//     // }
+
+//     padding: 15px;
+//     @include transition(all .2s linear);
+//     &:hover {
+//       color:$background;
+//       background-color: $dark-green;
+//     }
+//   }
+// }
+
+//   .main-articles-item:nth-of-type(even) a {
+//     background-color: $alt-background;
+//     color: $dark-grey;
+//         // @include vendor(box-shadow, inset 0 0 2px rgba(50,50,50,.3));
+
+//     &:hover {
+//       color: $background;
+//       background-color: $dark-green;
+//     }
+//   }
+
+.main-articles ul:hover li {
+  opacity:.25;
+}
+.main-articles ul li:hover {
+  opacity:1;
+}
+.main-projects {
+  @include media-query(700px) {
+    float:left;
+    width:38%;
+  }
+  @include clearfix;
+}
+
+img {
+  max-width: 100%;
+}
+
+
+.project-block {
+  display: block;
+  margin-bottom: $half-spacing-unit;
+  @include clearfix;
+  position: relative;
+  overflow: hidden;
+  // background-color: $dark-grey;
+  img {display:block;}
+
+}
+
+
+.project-block:hover {
+    background-color:$dark-grey;
+  }
+
+.project-block:hover .overlay {
+  background-color: rgba(0,0,0,.8);
+}
+
+.project-block figure {margin:0; padding:0;}
+.project-block img {
+  @include vendor(transition,all .5s);
+}
+.project-block:hover img {@include media-query(700px) {opacity:.1;}}
+
+.project-block:hover .project-caption {
+    color: $background;
+  }
+.project-caption {
+    @include vendor(transition,all 1s);
+    font-family: $heading-font;
+    font-style: normal;
+    letter-spacing: .2em;
+    @include media-query(700px) {
+    position:absolute;
+    top:45%;
+    width: 100%;
+    text-align: center;
+    color:transparent;
+  }
+}
+.more-link {
+  clear:left;
+  width: 100%;
+    text-align: right;
+    box-shadow: inset 0 24px 0 $background, inset 0 28px 0 $alt-background;
+
+  a {
+    // @include font-size(18px);
+    display: block;
+    font-family: $heading-font;
+    border-radius: $br;
+    padding:10px 15px;
+    color:$background;
+    background-color:$dark-green;
+    @include media-query(700px) {
+      background-color:$background;
+      color:$dark-green;
+      display: inline-block;
+    }
+    // position:relative;
+    &:hover {
+      background-color: $dark-green;
+      color: $background;
+    }
+  }
+}
+
+/* $Article-Specific
+**************************************************************************/
+
+.article-body, .about-body {
+  @extend .wrap;
+  margin: 0 auto;
+  @include clearfix;
+}
+
+.article-inner {
+  padding-top: $half-spacing-unit * 3;
+  margin:0 auto;
+  position: relative;
+  .snippet, .highlight, ul, ol {clear:both;}
+  > p, > h2, > ul, > ol, > .snippet, > .highlight {
+    max-width:100%;
+    margin-left:auto;
+    margin-right:auto;
+    @include media-query(700px) {
+max-width: 640px;
+    }
+  }
+}
+
+.art-intro {
+  margin-top:$half-spacing-unit * 3;
+}
+.article-inner h2 {
+    @include font-size(20px);
+    font-weight: 600;
+    color: $dark-grey;
+    margin-top:$half-spacing-unit * 3;
+    margin-bottom:$half-spacing-unit;
+    text-transform: uppercase;
+    text-align: center;
+    @include media-query(900px) {@include font-size($h3-size);}
+  }
+.article-inner .h-first {
+  margin-top:0;
+}
+
+// .article-intro {
+//   @include span-columns(10);
+//   @include shift(1);
+//   // @include pad();
+//   @include omega();
+//   // background-color: $alt-background;
+//   // font-weight: 600;
+// }
+
+.snippet {
+
+  display: block;
+}
+.image-block {
+
+}
+
+.art-aside {
+  position:relative;
+
+}
+
+figure {margin-bottom: $half-spacing-unit;}
+figure.center img {
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+figure.right, figure.left {
+  max-width: 50%;
+}
+figure img {
+  display: block;
+  max-width: 100%;
+}
+figcaption {
+  text-align: center;
+  font-style: italic;
+}
+
+#disqus_thread {
+  max-width: 640px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top:$base-spacing-unit;
+  border-top: 2px solid $alt-background;
+}
+/* $Archive Specific
+**************************************************************************/
+.archives {
+  border-top:5px solid $dark-grey;
+  position: relative;
+  min-height: 100%;
+  overflow-x:hidden;
+}
+.article-block {
+  background-color: $background;
+
+  &:nth-child(even) {
+    background-color: $alt-background;
+    @include box-emboss(.60,.05);
+  }
+}
+
+.article-block a {
+  padding:$base-spacing-unit 0;
+  position: relative;
+  @include media-query(700px) {padding:60px 0;}
+  display: block;
+  @extend .wrap;
+  color: $copy;
+  &:hover {
+    padding-left:60px;
+    padding-top: 65px;
+    padding-bottom:65px;
+
+    h1 {color: $background;}
+  }
+}
+
+.article-block:hover {
+  background: $dark-green;
+}
+.article-block h1 {
+  font-size: 24px;
+  @include media-query(700px) {font-size: $h3-size;}
+}
+.article-block p {
+  margin-bottom: 0;
+  color: black(.5);
+  max-width:70%;
+}
+
+.article-block:hover .datestamp {
+  color: $background;
+}
+.datestamp {
+  position:absolute;
+  right:0;
+  top:50%;
+  margin-top:-.5em;
+  display: block;
+  font-family: $heading-font;
+  font-weight: 600;
+  color:$tan;
+}
+/* $About Specific
+**************************************************************************/
+//Line 258
+
+.about-body h2 {
+    text-align: center;
+    @include font-size($body);
+    margin-bottom:$half-spacing-unit;
+    margin-top:$half-spacing-unit * 3;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: $dark-grey;
+
+    @include media-query(700px) {
+      @include font-size(24px);
+      text-align: left;
+}
+}
+.about-block {
+}
+
+.about-block ul {
+  list-style: inside;
+  li {border-bottom: 1px solid $alt-background;}
+}
+
+.about-block span{
+  // @include font-size(24px);
+  // margin-right:$half-spacing-unit;
+  // color: $copy;
+}
+
+
+/* $Article Meta
+**************************************************************************/
+
+.article-meta {
+  float:right;
+  max-width:150px;
+  @include media-query(em(1124)) {
+  position: absolute;
+  right:0;
+  top:36px;
+  }
+  margin-left: $base-spacing-unit;
+  font-family: $heading-font;
+  text-transform: uppercase;
+  @include media-query(em(1124)) {
+  position: absolute;
+  }
+  ul {
+    margin:0;
+    list-style-type: none;
+    @include font-size(14px);
+  }
+  li {
+    border-bottom: 1px solid $alt-background;
+  }
+}

@@ -1,0 +1,119 @@
+/* $Global Head
+**************************************************************************/
+
+.global-head {
+  width: 100%;
+  background-color: $dark-grey;
+  @include clearfix;
+  // border-bottom:4px solid $dark-green;
+  @include media-query(700px) {
+  top:0;
+  position: fixed;
+  z-index:100;
+  }
+}
+
+.nav-toggle {
+  display: block;
+  float:right;
+  margin:15px 0;
+  position:relative;
+  font-size:30px;
+  line-height: 1;
+  color:$background;
+  &:hover {
+    color:$dark-green;
+  }
+  @include media-query(600px) {
+    display: none;
+  }
+}
+
+.nav {
+
+  display: none;
+  height:0;
+  font-weight:bold;
+  list-style-type: none;
+  clear:left;
+  padding:0;
+  margin-bottom: $half-spacing-unit;
+  @include media-query(600px) { //Pending value
+    display: block;
+    margin-bottom: 0;
+    height:auto;
+    border:none;
+    clear:none;
+    text-align: right;
+    top:15px;
+    right:0;
+    @include font-size($body);
+    line-height: 1.666667;
+  }
+
+  // line-height:60px;
+  position:relative;
+
+  li {
+    margin-left:-8px;
+    padding:0;
+    border-top:2px solid lighten($copy,5%);
+      @include media-query(600px) {
+      border:none;
+      margin-left: $half-spacing-unit;
+      }
+    &:last-child {
+      border-bottom:2px solid $dark-green;
+      @include media-query(600px) {
+        border:none;
+      }
+    }
+
+  }
+  li, li a {
+    display: block;
+    @include media-query(600px) {
+    display: inline-block;
+  }
+  }
+  a {
+      font-family: $base-font;
+      color:$tan;
+      border-radius: $br;
+      letter-spacing: .25em;
+      font-weight: 400;
+      text-transform: uppercase;
+      line-height: 44px;
+      @include media-query(600px) { line-height: 1;}
+  }
+  a:hover, .current {
+    color: $background;
+    // background-color: $dark-green;
+
+  }
+  a:active {
+
+  color: $dark-green;
+  }
+
+}
+
+.nav-open {
+  height:auto;
+  display: block;
+  @include vendor(transition, height .2s linear);
+}
+
+.active {
+  height: 30px;
+  border-radius: $br;
+  background-color: #4e4e4e;
+  -webkit-box-shadow: 0 2px #414141, inset 0 1px #2c2c2c;
+  -moz-box-shadow: 0 2px #414141, inset 0 1px #2c2c2c;
+  box-shadow: 0 2px #414141, inset 0 1px #2c2c2c;
+}
+
+.current, #current {
+  color: $dark-green;
+  &:hover {color: $background;}
+}

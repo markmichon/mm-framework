@@ -1,0 +1,50 @@
+/*====================================================
+CSS Tooltips inspirted by Adam Whitcroft
+https://github.com/AdamWhitcroft/CSS.Tooltips
+====================================================*/
+[data-tip] {
+  position:relative;
+  cursor:help;
+}
+[data-tip]:before {
+  content:'';
+  /* hides the tooltip when not hovered */
+  display:none;
+  border:5px solid #1a1a1a;
+  /* 4 border technique to create the arrow */
+  border-top-color:#1a1a1a;
+  border-right-color:transparent;
+  border-bottom-color:transparent;
+  border-left-color:transparent;
+  position:absolute;
+  top:-7px;
+  left:0;
+  z-index:8;
+  font-size:0;
+  line-height:0;
+  width:0;
+  height:0;
+}
+[data-tip]:after {
+  display:none;
+  content:attr(data-tip);
+  position:absolute;
+  top:-35px;
+  left:-50px;
+  padding:5px 8px;
+  background:black(.8);
+  color:#fff;
+  z-index:9;
+  font-size: 14px;
+  // height:18px;
+  line-height:18px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  white-space:nowrap;
+  word-wrap:normal;
+}
+[data-tip]:hover:before,
+[data-tip]:hover:after {
+  display:block;
+}

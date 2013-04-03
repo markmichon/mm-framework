@@ -1,0 +1,80 @@
+/* $Base Styling and Typography
+**************************************************************************/
+html{
+    font:#{($base-font-size/16px)*1em}/#{$line-height-ratio} $base-font;
+    overflow-y:scroll;
+    min-height:100%;
+    background: $background;
+    color: $copy;
+}
+body {height:100%;}
+// Elements with Heading Font
+h1,h2,h3,h4,h5 {
+  font-style: normal;
+  font-weight: 500;
+  font-family: $heading-font;
+}
+
+h1, .h1 { @include font-size($h1-size);}
+h2, .h2 { @include font-size($h3-size);}
+h3, .h3 { @include font-size($h3-size);}
+
+p,ul,ol {
+  @include font-size(16px);
+  @include media-query(600px) {@include font-size($body);}
+  @include media-query(900px) {@include font-size(22px);}
+  margin-bottom:$base-spacing-unit;
+}
+
+ol, ul {
+  list-style: inside;
+  @include media-query(720px) {list-style: outside;}
+}
+
+ol {list-style-type: decimal;}
+ul {list-style-type: disc;}
+
+a { color: $dark-green; text-decoration: none; outline: 0; border-bottom: 1px solid transparent; @include vendor(transition, all .2s ease-in-out);}
+  a:hover, a:focus { color: $dark-green; }
+
+p a:hover {border-bottom: 1px solid $dark-green;}
+
+blockquote {
+  margin-bottom: $base-spacing-unit;
+  padding: $half-spacing-unit;
+  border-bottom: 2px solid $alt-background;
+  border-top: 2px solid $alt-background;
+  // color: lighten($copy,30%);
+  color: rgba($copy,.8);
+  @include clearfix;
+}
+
+blockquote.short {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 640px;
+}
+  blockquote p {
+    margin:0;
+    font-style: italic;
+    @include media-query(em(700)) {@include font-size(22px);}
+    @include media-query(em(900)) {@include font-size(24px);}
+  }
+
+  blockquote cite {
+  clear:right;
+  float: right;
+  @include font-size($body);
+  }
+
+figure {
+  margin:0;
+}
+::selection {
+  color: $background;
+  background-color: $dark-green;
+}
+::-moz-selection {
+  color: $background;
+  background-color: $dark-green;
+}
